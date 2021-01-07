@@ -455,18 +455,18 @@
 					axios.get(
 							serverUrl + '/index/carousel', {})
 						.then(res => {
-							if (res.data.status == 200) {
-								var carouselList = res.data.data
+							debugger
+							if (res.status == 200) {
+								var carouselList = res.data.data;
 								this.carouselList = carouselList;
 
-							
 								// 循环渲染轮播图
 								var $slider = $('#demo-slider-0');
 								for (var i = 0; i < carouselList.length; i++) {
 
 									var type = carouselList[i].type;
-									var catId = carouselList[i].catId;
-									var itemId = carouselList[i].itemId;
+									var catId = carouselList[i].cat_id;
+									var itemId = carouselList[i].item_id;
 									var catOrItemId = "";
 
 									if (type == 1) {
@@ -478,9 +478,9 @@
 									
 									catOrItemId = encodeURI(catOrItemId);
 
-									var cal = '<li class="" style="background: ' + carouselList[i].backgroundColor +
+									var cal = '<li class="" style="background: ' + carouselList[i].background_color +
 										';">' +
-										'<a href=javascript:showPage(' + type + ',\"'+catOrItemId+'\");><img src="' + carouselList[i].imageUrl + '" /></a>' +
+										'<a href=javascript:showPage(' + type + ',\"'+catOrItemId+'\");><img src="' + carouselList[i].image_url + '" /></a>' +
 										+'</li>';
 									$slider.flexslider('addSlide', cal);
 								}
