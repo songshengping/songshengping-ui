@@ -173,12 +173,12 @@
 				<!--甜点-->
 				<div class="am-container ">
 					<div class="shopTitle ">
-						<h4>{{rootCat.rootCatName}}</h4>
+						<h4>{{rootCat.cat_name}}</h4>
 						<h3>{{rootCat.slogan}}</h3>
 					</div>
 				</div>
 				<div class="am-g am-g-fixed floodFour">
-					<div class="am-u-sm-5 am-u-md-4 text-one list" :style="'background-color:' + rootCat.bgColor">
+					<div class="am-u-sm-5 am-u-md-4 text-one list" :style="'background-color:' + rootCat.bg_color">
 						<a href="javascript:void(0);">
 							<img :src="rootCat.catImage"/>
 						</a>
@@ -187,50 +187,50 @@
 					<div class="am-u-sm-7 am-u-md-4 text-two sug">
 						<div class="outer-con ">
 							<div class="title ">
-								{{rootCat.simpleItemList[0].itemName}}
+								{{rootCat.item_list[0].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[0].itemId" target="_blank"><img :src="rootCat.simpleItemList[0].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[0].id" target="_blank"><img :src="rootCat.item_list[0].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 					<div class="am-u-sm-7 am-u-md-4 text-two">
 						<div class="outer-con ">
 							<div class="title ">
-								{{rootCat.simpleItemList[1].itemName}}
+								{{rootCat.item_list[1].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[1].itemId" target="_blank"><img :src="rootCat.simpleItemList[1].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[1].id" target="_blank"><img :src="rootCat.item_list[1].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 					<div class="am-u-sm-3 am-u-md-2 text-three big" >
 						<div class="outer-con " >
 							<div class="title ">
-								{{rootCat.simpleItemList[2].itemName}}
+								{{rootCat.item_list[2].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[2].itemId" target="_blank"><img :src="rootCat.simpleItemList[2].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[2].id" target="_blank"><img :src="rootCat.item_list[2].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 					<div class="am-u-sm-3 am-u-md-2 text-three sug">
 						<div class="outer-con ">
 							<div class="title ">
-								{{rootCat.simpleItemList[3].itemName}}
+								{{rootCat.item_list[3].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[3].itemId" target="_blank"><img :src="rootCat.simpleItemList[3].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[3].id" target="_blank"><img :src="rootCat.item_list[3].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 					<div class="am-u-sm-3 am-u-md-2 text-three ">
 						<div class="outer-con ">
 							<div class="title ">
-								{{rootCat.simpleItemList[4].itemName}}
+								{{rootCat.item_list[4].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[4].itemId" target="_blank"><img :src="rootCat.simpleItemList[4].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[4].id" target="_blank"><img :src="rootCat.item_list[4].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 					<div class="am-u-sm-3 am-u-md-2 text-three last big ">
 						<div class="outer-con ">
 							<div class="title ">
-								{{rootCat.simpleItemList[5].itemName}}
+								{{rootCat.item_list[5].item_name}}
 							</div>
 						</div>
-						<a :href="'item.html?itemId=' + rootCat.simpleItemList[5].itemId" target="_blank"><img :src="rootCat.simpleItemList[5].itemUrl" style="width: 170px; height: 170px;"/></a>
+						<a :href="'item.html?id=' + rootCat.item_list[5].id" target="_blank"><img :src="rootCat.item_list[5].itemUrl" style="width: 170px; height: 170px;"/></a>
 					</div>
 				</div>
 				<div class="clear "></div>
@@ -332,14 +332,14 @@
 	<!-- <script type="text/javascript " src="components/mloading/jquery.mloading.js"></script> -->
 	<script type="text/javascript " src="js/app.js"></script>
 	<script type="text/javascript">
-		function showPage(type, catOrItemId) {
+		function showPage(type, catOrid) {
 			// console.log("type:" + type);
-			// console.log("catOrItemId:" + catOrItemId);
+			// console.log("catOrid:" + catOrid);
 
 			if(type == 1) {
-				window.open("item.html?itemId=" + catOrItemId);
+				window.open("item.html?id=" + catOrid);
 			} else if (type == 2) {
-				window.open("catItems.html?searchType=catItems&catId=" + catOrItemId);
+				window.open("catItems.html?searchType=catItems&catId=" + catOrid);
 				
 			}
 		}
@@ -438,10 +438,10 @@
 					axios.get(
 							serverUrl + '/index/sixNewItems/' + rootCatId, {})
 						.then(res => {
-							if (res.data.status == 200) {
+							if (res.status == 200) {
 								var sixNewItemsListTemp = res.data.data
 								var sixNewItemsList = this.sixNewItemsList;
-								sixNewItemsList.push(sixNewItemsListTemp[0]);
+								sixNewItemsList.push(sixNewItemsListTemp);
 								this.sixNewItemsList = sixNewItemsList;
 								// console.log(sixNewItemsList);
 								this.isScrolling = false;	// 加载完毕以后表示下次可以继续滚动加载
@@ -466,21 +466,21 @@
 
 									var type = carouselList[i].type;
 									var catId = carouselList[i].cat_id;
-									var itemId = carouselList[i].item_id;
-									var catOrItemId = "";
+									var id = carouselList[i].item_id;
+									var catOrid = "";
 
 									if (type == 1) {
-										catOrItemId = itemId;
+										catOrid = id;
 									}
 									if (type == 2) {
-										catOrItemId = catId;
+										catOrid = catId;
 									}
 									
-									catOrItemId = encodeURI(catOrItemId);
+									catOrid = encodeURI(catOrid);
 
 									var cal = '<li class="" style="background: ' + carouselList[i].background_color +
 										';">' +
-										'<a href=javascript:showPage(' + type + ',\"'+catOrItemId+'\");><img src="' + carouselList[i].image_url + '" /></a>' +
+										'<a href=javascript:showPage(' + type + ',\"'+catOrid+'\");><img src="' + carouselList[i].image_url + '" /></a>' +
 										+'</li>';
 									$slider.flexslider('addSlide', cal);
 								}
@@ -502,7 +502,7 @@
 							serverUrl + '/index/cats', {})
 						.then(res => {
 							
-							if (res.data.status == 200) {
+							if (res.status == 200) {
 								var categoryList = res.data.data
 								this.categoryList = categoryList;
 
@@ -555,7 +555,7 @@
 											axios.get(
 													serverUrl + '/index/subCat/' + rootCatId, {})
 												.then(res => {
-													if (res.data.status == 200) {
+													if (res.status == 200) {
 														var catList = res.data.data
 														// this.catList = catList;
 														// debugger;
@@ -568,12 +568,12 @@
 																cat.name + '</span></dt>';
 
 															// 拼接第三级分类
-															var subCatList = cat.subCatList;
+															var subCatList = cat.sub_category_list;
 															for (var j = 0; j < subCatList.length; j++) {
 																var subCat = subCatList[j];
 																subRenderHtml += '<dd><a title="' + subCat
-																	.subName + '" href="catItems.html?searchType=catItems&catId='+ subCat.subId +'" target="_blank"><span>' +
-																	subCat.subName + '</span></a></dd>'
+																	.name + '" href="catItems.html?searchType=catItems&catId='+ subCat.id +'" target="_blank"><span>' +
+																	subCat.name + '</span></a></dd>'
 															}
 
 															subRenderHtml += '</dl>';
